@@ -31,7 +31,7 @@ To get started.
        # Create the .env file based on the env.example.txt file and include the respective keys.
        
        # installs dependencies
-         npm install
+         npm install --force
 
        # to run in development mode
          npm run dev
@@ -48,4 +48,4 @@ To get started.
 
 Go to [SvelteKit Online Store Video](https://youtu.be/roPUj0l-Y-U) page
 
-Go to [SvelteKit Online Store Description](https://github.com/Ashot72/SvelteKit-Online-Store/doc.html) page
+Go to [SvelteKit Online Store Description](https://ashot72.github.io/SvelteKit-Online-Store/root/doc.html) page
