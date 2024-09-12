@@ -1,0 +1,459 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:22.0pt;line-height:107%'>SvelteKit Online Store</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Video Link: <a
+href="https://youtu.be/roPUj0l-Y-U" target="_blank">https://youtu.be/roPUj0l-Y-U</a></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>GitHub
+Repository: <a href="https://github.com/Ashot72/SvelteKit-Online-Store"
+target="_blank">https://github.com/Ashot72/SvelteKit-Online-Store</a></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><a href="https://kit.svelte.dev/" target="_blank"><b><span
+style='font-size:14.0pt;line-height:107%'>SvelteKit</span></b></a><b><span
+style='font-size:14.0pt;line-height:107%'> </span></b><span style='font-size:
+14.0pt;line-height:107%'>is a powerful web development framework built on </span><a
+href="https://svelte.dev/" target="_blank"><span style='font-size:14.0pt;
+line-height:107%'>Svelte</span></a><span style='font-size:14.0pt;line-height:
+107%'> and </span><a href="https://vitejs.dev/" target="_blank"><span
+style='font-size:14.0pt;line-height:107%'>Vite</span></a><span
+style='font-size:14.0pt;line-height:107%'>, designed for speed and simplicity.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Svelte
+allows us to create lightweight, modern web applications with highly optimized
+JavaScript. It is not a framework; it is a compiler. Svelte takes your code as
+input and uses it to generate </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>vanilla
+JavaScript by compiling it during the build process into a single vanilla
+JavaScript bundle. This eliminates the need for a library like most other
+front-end frameworks.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>This means
+we are shipping the smallest amount of code possible code that is not only
+small in size but also super-efficient. This makes Svelte faster than most
+other front-end frameworks. </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Svelte also
+enables us to achieve true reactivity in our apps. Most other JavaScript
+frameworks rely on APIs to detect when data changes to update the virtual DOM,
+meaning their reactivity is tied to it. </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>However,
+Svelte does not use a virtual DOM. Instead, it writes code that updates the DOM
+whenever the state in the app changes, allowing us to achieve true reactivity.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Svelte
+itself is just the UI layer. It allows us to write code that is compiled into
+browser-readable JavaScript. What it does not do are things like routing, for
+which we would need to use a </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>third-party
+router. It also does not support server-side rendering (SSR). All of our Svelte
+code is only available on the client, which is not necessarily ideal for SEO.
+This is where SvelteKit </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>comes in
+handy. It provides us with a built-in router, server-side rendering, code
+splitting, and many other features that not only improve performance but also
+enhance the developer experience.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Understanding
+how data flows through your app in SvelteKit can be confusing because of the
+integration between the frontend and backend in the app.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1339 height=450
+src="doc_files/image001.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 1</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>A <i>page</i>
+is just a Svelte component. The <i>load </i>function inside <i>+page.ts </i>runs
+on the server and the client but if you need to use a secret, talk to a
+database, or write to a file</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Add <i>.server,
+</i>so the <i>load</i> function only tuns n the sever. In our app we do not use
+<i>+page.svelte</i> but <i>+page.server.svelte</i> files.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1361 height=655
+src="doc_files/image002.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 2</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>When we
+navigate to the register route, we see both the online store in the background
+and the modal form.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1375 height=547
+src="doc_files/image003.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 3</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>In the
++page.server.ts file under the register route, we load the page data through
+the <i>load</i> function by exporting <i>export let data</i> in the
++page.svelte file. The form data is obtained </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>using form <i>actions</i>
+in the outer +page.server.ts file and by exporting <i>export let form</i> in
+the same +page.svelte file.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1435 height=799
+src="doc_files/image004.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 4</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>When we
+register a user or log in, we call the <i>createUser</i> and <i>updateUser</i>
+database functions respectively to add or update the user auth token, which we
+will use to access the protected routes.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1031 height=782 id="Picture 21"
+src="doc_files/image005.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 4a</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Setting the
+cookie.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1376 height=662 id="Picture 1"
+src="doc_files/image006.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 5</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We created
+hooks.server.ts at the root of the project. In SvelteKit a <i>hook </i>is just
+a file that runs every time the SvelteKit server receives a request and lets
+you modify incoming</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>requests and
+change the response. After the user is authenticated and cookie is created we
+can populate <i>event.locals.user </i>with the user <i>id</i> and <i>email</i>.
+</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>SvelteKit <i>locals
+</i>are a way to store data that is specific to the current request.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1381 height=667 id="Picture 2"
+src="doc_files/image007.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 6</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>In the +layout.server.ts
+file we retrieve the authenticated user information via locals.user. Since the
+locals.user is populated we can pass it to the $page store from +layout.server.ts.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We use the
+$page store on the client in the Header.svelte file to know if the user is
+authenticated or not.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1381 height=705 id="Picture 3"
+src="doc_files/image008.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 7</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>When a user
+who is not authenticated tries to navigate to the protected route <i>/categories</i>,
+they will be redirected to the main page. Similarly, if an authenticated user
+tries to navigate to the </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>login route <i>/auth/login</i>,
+they will also be redirected to the main page.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1360 height=760 id="Picture 4"
+src="doc_files/image009.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 8</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>In SvelteKit
+we can receive data either using <i>data</i> prop or <i>$page.data</i>. In my
+opinion for a page <i>export let data </i>is convenient and $page.data is useful
+for svelte components</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>that are not
+pages.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=687 height=424 id="Picture 5"
+src="doc_files/image010.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 9</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>In Svelte, <i>$:</i>
+denotes a reactive declaration. Just like components get re-rendered whenever
+an update occurs, the same applies to reactive declarations. When a user </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>is
+authenticated, we can show or hide navbar items based on it.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1393 height=390 id="Picture 6"
+src="doc_files/image011.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 10</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>When we
+navigate to <i>/categories</i>, data is retrieved in the load function from the
+database to render the page.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1479 height=907 id="Picture 7"
+src="doc_files/image012.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 11</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>When we console.log
+the data returned from the +page.svelte load function for the /categories
+route, we will notice that not only is the data from this function returned,
+but also the data </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>from the
+layout</span><span style='font-size:14.0pt;line-height:107%;color:black'>'</span><span
+style='font-size:14.0pt;line-height:107%'>s load function. Data returned from
+layout <i>load </i>function is available to child +layout.svelte components (we
+do not have in this project) and the +page.svelte component</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>as well as
+the layout that is belongs to.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1490 height=724 id="Picture 8"
+src="doc_files/image013.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 12</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Form actions
+can define methods that map to an actions inside a +page.server.ts file. If you
+do not define an <i>action</i> attribute you can use the <i>default </i>method
+but for multiple actions</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>it is
+replaced by <i>named actions </i>like action=”?/delete”</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=891 height=868 id="Picture 9"
+src="doc_files/image014.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 13</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>It is
+possible to perform pattern matching in SvelteKit routes. First, we create a <i>params</i>
+folder under src, then define the <i>match</i> function in a file within the params
+folder. </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>The route
+references it using the [=hex] syntax, in our case.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=897 height=418 id="Picture 10"
+src="doc_files/image015.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 14</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>If it is not
+a valid MongoDB ObjectId(), then it will not match the route.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1067 height=835 id="Picture 11"
+src="doc_files/image016.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 15</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Each time
+you submit a form, the page reloads, which is the default behavior. This means
+the form works without JavaScript. Without any arguments, </span></p>
+
+<p class=MsoNormal><i><span style='font-size:14.0pt;line-height:107%'>use:enhance</span></i><span
+style='font-size:14.0pt;line-height:107%'> emulates the browser-native
+behavior, but without the full-page reloads. We customized the enhance action
+to display a loading UI by </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>providing a submit
+function that runs before the form is submitted and can return a call back that
+has access to the result.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1179 height=760 id="Picture 12"
+src="doc_files/image017.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 16</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Let</span><span
+style='font-size:14.0pt;line-height:107%;color:black'>'</span><span
+style='font-size:14.0pt;line-height:107%'>s add a category that is not valid,
+for example, then click the back button of the browser.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1178 height=566 id="Picture 13"
+src="doc_files/image018.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 17</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>You will be
+redirected to the categories page. Now, let</span><span style='font-size:14.0pt;
+line-height:107%;color:black'>'</span><span style='font-size:14.0pt;line-height:
+107%'>s click on the forward button.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1204 height=790 id="Picture 14"
+src="doc_files/image019.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 18</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>You will see
+that the form state is preserved.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1091 height=663 id="Picture 15"
+src="doc_files/image020.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 19</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>A nice SvelteKit
+feature is <i>snapshots </i>which saves and restores data when the user
+navigates on the site. This is perfect for saving the form state.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1146 height=584 id="Picture 17"
+src="doc_files/image021.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 20</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>In
+SvelteKit, we can have <i>Page</i> and <i>Standalone</i> endpoints. In the
+project, we saw how we can retrieve data from the <i>load</i> function, which
+is a Page endpoint. A Standalone </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>endpoint can
+be used by multiple routes in your app and can even serve as a REST API inside
+or outside your app if you include CORS headers.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1208 height=634 id="Picture 18"
+src="doc_files/image022.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 21</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>In our app,
+some routes should display the home page. For example, when we navigate through
+categories, login, or register, we should retrieve the home page </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>information,
+including categories on the left and products. To avoid duplicating code in
+multiple route load functions, we can obtain it from a Standalone endpoint.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>The endpoint
+must be defined in a <i>+server.ts</i> file.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1279 height=651 id="Picture 19"
+src="doc_files/image023.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 22</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>In the app,
+we use the <i>react-stripe-checkout</i> package for payments. For this reason,
+we integrate React into the project by installing the <i>svelte-preprocess-react</i>
+package.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1307 height=575 id="Picture 20"
+src="doc_files/image024.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 23</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>In the <i>Cart.svelte</i>
+file on the client side, we can display the React payment dialog and then call Checkout
+to process a payment.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
