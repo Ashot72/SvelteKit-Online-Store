@@ -5,12 +5,11 @@
 	import CartProducts from './CartProducts.svelte';
 
 	$: data = $page.data;
-	$: form = $page.form;
 </script>
 
 <div class="container mt-2" id="cart">
 	{#if data.cart}
-		<CartProducts products={data.cart.products} {form} />
+		<CartProducts products={data.cart.products} />
 		<div class="card mb-3">
 			<div class="me-3">
 				<div

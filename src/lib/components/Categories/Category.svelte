@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { ActionResult, SubmitFunction } from '@sveltejs/kit';
 	import { applyAction, enhance } from '$app/forms';
-	import type { Category } from '$lib/types';
+	import { page } from '$app/stores';
 	import type { Category as DBCategory } from '@prisma/client';
 	import { lnToBr } from '$lib/utils';
 	import { goto } from '$app/navigation';
@@ -9,7 +9,7 @@
 	export let category: DBCategory;
 	export let userId: string;
 
-	export let form: Category | undefined = undefined;
+	$: form = $page.form;
 
 	let loading = false;
 

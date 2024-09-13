@@ -3,7 +3,6 @@
 	import CategoryComp from './Category.svelte';
 
 	$: data = $page.data;
-	$: form = $page.form;
 </script>
 
 <div class="container">
@@ -21,7 +20,7 @@
 		<tbody>
 			{#each data.categories as category}
 				<tr>
-					<CategoryComp {form} {category} userId={data.user.id} />
+					<CategoryComp {category} userId={data.user.id} />
 				</tr>
 			{/each}
 		</tbody>

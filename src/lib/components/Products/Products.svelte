@@ -3,7 +3,6 @@
 	import ProductComp from './Product.svelte';
 
 	$: data = $page.data;
-	$: form = $page.form;
 </script>
 
 <div class="container">
@@ -23,7 +22,7 @@
 		<tbody>
 			{#each data.products as product}
 				<tr>
-					<ProductComp {form} {product} userId={data.user.id} />
+					<ProductComp {product} userId={data.user.id} />
 				</tr>
 			{/each}
 		</tbody>

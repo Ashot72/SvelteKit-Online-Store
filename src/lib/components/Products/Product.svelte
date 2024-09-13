@@ -4,11 +4,11 @@
 	import type { Product as DBProduct } from '@prisma/client';
 	import { lnToBr } from '$lib/utils';
 	import { goto } from '$app/navigation';
-	import type { Product } from '$lib/types';
+	import { page } from '$app/stores';
 
 	export let product: DBProduct;
 	export let userId: string;
-	export let form: Product | undefined = undefined;
+	$: form = $page.form;
 
 	let loading = false;
 

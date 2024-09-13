@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { CartProducts } from '@prisma/client';
 	import { applyAction, enhance } from '$app/forms';
+	import { page } from '$app/stores';
 	import type { ActionResult, SubmitFunction } from '@sveltejs/kit';
-	import type { Cart } from '$lib/types';
 
 	export let product: CartProducts;
-	export let form: Cart;
+	$: form = $page.form;
 
 	let loadingPlus = false;
 	let loadingMinus = false;
