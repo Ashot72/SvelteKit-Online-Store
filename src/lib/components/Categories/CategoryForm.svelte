@@ -1,11 +1,14 @@
 <script lang="ts">
-	import type { ActionResult, SubmitFunction } from '@sveltejs/kit';
+	import type { ActionResult, Snapshot, SubmitFunction } from '@sveltejs/kit';
 	import { applyAction, enhance } from '$app/forms';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
+	import type { Category } from '$lib/types.js';
 
 	export let title: string;
-	$: form = $page.form;
+
+	// for exported for snapshot
+	export let form;
 	$: data = $page.data;
 
 	let loading = false;

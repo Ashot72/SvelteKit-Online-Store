@@ -14,4 +14,4 @@
 </script>
 
 <Categories />
-<CategoryForm {title} />
+<CategoryForm {title} {form} />

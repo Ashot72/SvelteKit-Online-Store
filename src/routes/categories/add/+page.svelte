@@ -4,13 +4,14 @@
 	import type { Category } from '$lib/types.js';
 
 	export let form: Category;
+
 	const title = 'Add Category';
 
 	export const snapshot = {
 		capture: () => form,
-		restore: (value: Category) => (form = value)
+		restore: (value) => (form = value)
 	};
 </script>
 
 <Categories />
-<CategoryForm {title} />
+<CategoryForm {title} {form} />

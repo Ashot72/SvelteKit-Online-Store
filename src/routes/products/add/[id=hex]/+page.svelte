@@ -14,4 +14,4 @@
 </script>
 
 <Products />
-<ProductForm {title} />
+<ProductForm {title} {form} />

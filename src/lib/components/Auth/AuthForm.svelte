@@ -5,7 +5,8 @@
 	import { goto } from '$app/navigation';
 
 	export let title: string;
-	$: form = $page.form;
+	// for exported for snapshot
+	export let form;
 
 	let loading = false;
 

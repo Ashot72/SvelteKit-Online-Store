@@ -13,4 +13,4 @@
 </script>
 
 <MainPage />
-<AuthForm {title} />
+<AuthForm {title} {form} />

@@ -3,11 +3,9 @@
 	import { lnToBr } from '$lib/utils';
 	import { applyAction, enhance } from '$app/forms';
 	import type { Product as DBProduct } from '@prisma/client';
-	import type { Product } from '$lib/types';
 
 	export let product: DBProduct;
 	export let userId: string;
-	export let form: Product | undefined = undefined;
 
 	let loading = false;
 
@@ -49,11 +47,6 @@
 									<span>Wait...</span>
 								{/if}
 							</button>
-							{#if form?.errors && form?.errors?.form && form?.data?.id === product.id}
-								<div class="alert alert-danger m-2" role="alert">
-									{form.errors.form.join(', ')}
-								</div>
-							{/if}
 						</form>
 					</div>
 				{/if}

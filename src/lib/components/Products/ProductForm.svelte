@@ -6,7 +6,8 @@
 
 	export let title: string;
 
-	$: form = $page.form;
+	// for exported for snapshot
+	export let form;
 	$: data = $page.data;
 
 	let loading = false;
