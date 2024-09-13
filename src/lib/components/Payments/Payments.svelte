@@ -1,11 +1,8 @@
 <script lang="ts">
-	import type { Payment as DBPayment } from '@prisma/client';
+	import { page } from '$app/stores';
 	import Payment from './Payment.svelte';
 
-	export let data: {
-		payments: DBPayment[];
-		total: number;
-	};
+	const data = $page.data;
 </script>
 
 <div class="container mt-2">

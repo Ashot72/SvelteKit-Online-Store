@@ -1,10 +1,9 @@
 <script lang="ts">
-	import type { Product as DBProduct } from '@prisma/client';
-	import type { Product } from '$lib/types';
+	import { page } from '$app/stores';
 	import ProductComp from './Product.svelte';
 
-	export let data: { products: DBProduct[]; user: App.Locals['user']; categoryId: string };
-	export let form: Product | undefined = undefined;
+	$: data = $page.data;
+	$: form = $page.form;
 </script>
 
 <div class="container">
@@ -24,11 +23,7 @@
 		<tbody>
 			{#each data.products as product}
 				<tr>
-					{#if form}
-						<ProductComp {form} {product} userId={data.user.id} />
-					{:else}
-						<ProductComp {product} userId={data.user.id} />
-					{/if}
+					<ProductComp {form} {product} userId={data.user.id} />
 				</tr>
 			{/each}
 		</tbody>

@@ -1,12 +1,10 @@
 <script lang="ts">
 	import AuthForm from '$lib/components/Auth/AuthForm.svelte';
-	import type { Home, Auth } from '$lib/types';
+	import type { Auth } from '$lib/types';
 	import MainPage from '../../+page.svelte';
 
 	export let form: Auth;
 	const title = 'Sign Up';
-
-	export let data: Home;
 
 	export const snapshot = {
 		capture: () => form,
@@ -14,5 +12,5 @@
 	};
 </script>
 
-<MainPage {data} />
-<AuthForm {form} {title} />
+<MainPage />
+<AuthForm {title} />

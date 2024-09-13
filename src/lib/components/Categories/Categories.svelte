@@ -1,10 +1,9 @@
 <script lang="ts">
-	import type { Category as DBCategory } from '@prisma/client';
-	import type { Category } from '$lib/types';
+	import { page } from '$app/stores';
 	import CategoryComp from './Category.svelte';
 
-	export let data: { categories: DBCategory[]; user: App.Locals['user'] };
-	export let form: Category | undefined = undefined;
+	$: data = $page.data;
+	$: form = $page.form;
 </script>
 
 <div class="container">
@@ -22,11 +21,7 @@
 		<tbody>
 			{#each data.categories as category}
 				<tr>
-					{#if form}
-						<CategoryComp {form} {category} userId={data.user.id} />
-					{:else}
-						<CategoryComp {category} userId={data.user.id} />
-					{/if}
+					<CategoryComp {form} {category} userId={data.user.id} />
 				</tr>
 			{/each}
 		</tbody>

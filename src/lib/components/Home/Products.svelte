@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Product as DBProduct } from '@prisma/client';
+	import { page } from '$app/stores';
 	import ProductComp from './Product.svelte';
 
-	export let data: { products: DBProduct[]; user: App.Locals['user'] };
+	const data = $page.data;
 </script>
 
 <span class="w-100">

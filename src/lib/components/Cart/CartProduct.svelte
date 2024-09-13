@@ -34,6 +34,7 @@
 			await applyAction(result);
 			loadingPlus = false;
 			loadingMinus = false;
+			loadingDelete = false;
 		};
 	};
 </script>

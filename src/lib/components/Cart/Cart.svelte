@@ -1,12 +1,11 @@
 <script lang="ts">
-	import type { Cart as DBCart } from '@prisma/client';
-	import type { Cart } from '$lib/types';
+	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 	import Checkout from '$lib/components/Cart/Checkout'; // must be imported
 	import CartProducts from './CartProducts.svelte';
 
-	export let data: { cart: DBCart; total: number; user: App.Locals['user'] };
-	export let form: Cart;
+	$: data = $page.data;
+	$: form = $page.form;
 </script>
 
 <div class="container mt-2" id="cart">

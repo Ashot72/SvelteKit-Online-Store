@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-
 	let name = $page?.data?.term;
 
-	$: user = $page?.data?.user;
-	$: pathname = $page?.data?.pathname;
+	$: user = $page?.data?.user as App.Locals['user'];
+	$: pathname = $page?.data?.pathname as string;
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

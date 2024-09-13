@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { ActionResult, SubmitFunction } from '@sveltejs/kit';
-	import type { Auth } from '$lib/types';
+	import { page } from '$app/stores';
 	import { applyAction, enhance } from '$app/forms';
 	import { goto } from '$app/navigation';
 
 	export let title: string;
-	export let form: Auth;
+	$: form = $page.form;
 
 	let loading = false;
 

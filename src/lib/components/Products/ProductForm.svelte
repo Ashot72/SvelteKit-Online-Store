@@ -1,12 +1,13 @@
 <script lang="ts">
 	import type { ActionResult, SubmitFunction } from '@sveltejs/kit';
 	import { applyAction, enhance } from '$app/forms';
+	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	import type { Product } from '$lib/types.js';
 
 	export let title: string;
-	export let form: Product;
-	export let categoryId;
+
+	$: form = $page.form;
+	$: data = $page.data;
 
 	let loading = false;
 
@@ -60,9 +61,14 @@
 						method="POST"
 						use:enhance={action}
 					>
-						<input type="hidden" name="id" value={form?.data?.id ?? ''} />
-						<input type="hidden" id="picture" name="picture" value={form?.data?.picture ?? ''} />
-						<input type="hidden" id="categoryId" name="categoryId" value={categoryId} />
+						<input type="hidden" name="id" value={form?.data?.id ?? data?.product?.id} />
+						<input
+							type="hidden"
+							id="picture"
+							name="picture"
+							value={form?.data?.picture ?? data?.product?.picture}
+						/>
+						<input type="hidden" id="categoryId" name="categoryId" value={data?.categoryId} />
 						<div class="d-flex flex-row align-items-center mb-4">
 							<div class="form-outline flex-fill mb-0">
 								{#if form?.errors && form?.errors?.form}
@@ -84,7 +90,7 @@
 									name="name"
 									placeholder="Name"
 									class="form-control"
-									value={form?.data?.name ?? ''}
+									value={form?.data?.name ?? data?.product?.name ?? ''}
 								/>
 							</div>
 						</div>
@@ -101,7 +107,8 @@
 									name="description"
 									placeholder="Description"
 									rows="4"
-									class="form-control">{form?.data?.description ?? ''}</textarea
+									class="form-control"
+									>{form?.data?.description ?? data?.product?.description ?? ''}</textarea
 								>
 							</div>
 						</div>
@@ -120,7 +127,7 @@
 									name="price"
 									placeholder="Price"
 									class="form-control"
-									value={form?.data?.price ?? ''}
+									value={form?.data?.price ?? data?.product?.price ?? ''}
 								/>
 							</div>
 						</div>
@@ -139,7 +146,7 @@
 									name="count"
 									placeholder="Count"
 									class="form-control"
-									value={form?.data?.count ?? ''}
+									value={form?.data?.count ?? data?.product?.count ?? ''}
 								/>
 							</div>
 						</div>
@@ -163,7 +170,12 @@
 							</div>
 						</div>
 						<div class="text-center mb-2">
-							<img alt="" id="base64" style="max-width: 420px" src={form?.data?.picture ?? ''} />
+							<img
+								alt=""
+								id="base64"
+								style="max-width: 420px"
+								src={form?.data?.picture ?? data?.product?.picture ?? ''}
+							/>
 						</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary">
@@ -174,7 +186,7 @@
 								{/if}
 							</button>
 							<button
-								on:click={() => goto(`/products/${categoryId ?? ''}`)}
+								on:click={() => goto(`/products/${data?.categoryId ?? ''}`)}
 								id="cancel-btn"
 								type="button"
 								class="btn btn-secondary"

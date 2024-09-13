@@ -1,11 +1,12 @@
 <script lang="ts">
 	import type { ActionResult, SubmitFunction } from '@sveltejs/kit';
 	import { applyAction, enhance } from '$app/forms';
-	import type { Category } from '$lib/types';
+	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 
 	export let title: string;
-	export let form: Category;
+	$: form = $page.form;
+	$: data = $page.data;
 
 	let loading = false;
 
@@ -38,7 +39,7 @@
 						method="POST"
 						use:enhance={action}
 					>
-						<input type="hidden" name="id" value={form?.data?.id ?? ''} />
+						<input type="hidden" name="id" value={form?.data?.id ?? data?.category?.id} />
 						<div class="d-flex flex-row align-items-center mb-4">
 							<div class="form-outline flex-fill mb-0">
 								{#if form?.errors && form?.errors?.form}
@@ -60,7 +61,7 @@
 									name="name"
 									placeholder="Name"
 									class="form-control"
-									value={form?.data?.name ?? ''}
+									value={form?.data?.name ?? data?.category?.name ?? ''}
 								/>
 							</div>
 						</div>
@@ -77,7 +78,8 @@
 									name="description"
 									placeholder="Description"
 									rows="4"
-									class="form-control">{form?.data?.description ?? ''}</textarea
+									class="form-control"
+									>{form?.data?.description ?? data?.category?.description ?? ''}</textarea
 								>
 							</div>
 						</div>

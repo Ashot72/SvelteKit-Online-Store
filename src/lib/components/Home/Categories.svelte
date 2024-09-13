@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import type { Home } from '$lib/types';
 	import CategoryComp from './Category.svelte';
 
-	export let data: Home;
+	const data = $page.data;
 	$: count = data.products.length;
 
 	$: categoryId =

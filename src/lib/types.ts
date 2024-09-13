@@ -1,11 +1,3 @@
-import type { Category as DBCategory, Product as DBProduct } from "@prisma/client";
-
-export type Home = {
-    categories: DBCategory[];
-    products: DBProduct[];
-    user: App.Locals['user'];
-    error: string;
-}
 
 export type Auth = {
     errors?: {
